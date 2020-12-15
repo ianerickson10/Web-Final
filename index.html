@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Ian Erickson Photography</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <main class="gridContainer">
+        <header>
+            <h1 style="text-align: center;">Ian Erickson Photography</h1>
+
+        </header>
+
+        <nav id="menu">
+            <button type="button" id="mainButton" class="navButton"
+                onclick="showContent('mainPage', ['weddingPage', 'groupPage', 'singlePage', 'formPage', 'visitorPage']);">Main Page</button></br>
+            <button type="button" id="weddingButton" class="navButton"
+                onclick="showContent('weddingPage', ['mainPage', 'groupPage', 'singlePage', 'formPage', 'visitorPage']);">Weddings</button></br>
+            <button type="button" id="groupButton" class="navButton"
+                onclick="showContent('groupPage', ['weddingPage', 'mainPage', 'singlePage', 'formPage', 'visitorPage']);">Group
+                Pictures</button></br>
+            <button type="button" id="singleButton" class="navButton"
+                onclick="showContent('singlePage', ['weddingPage', 'groupPage', 'mainPage', 'formPage', 'visitorPage']);">Single Subject</button>
+            <!-- <button type="button" id="formButton" class="navButton"
+                onclick="showContent('formPage', ['weddingPage', 'groupPage', 'mainPage', 'singlePage', 'visitorPage']);">Visitor Survey</button> -->
+            <button type="button" id="visitorButton" class="navButton"
+                onclick="loadVisitors();">Visitors</button>
+
+        </nav>
+
+
+
+        <content>
+            <section class="gridItem" id="mainPage">
+                <p>
+                    Hi! I'm Ian Erickson and I have always been facinated by photography. A few years ago I got a
+                    camera, and ever since then I've tried to get as much experence as I can by doing all different
+                    kinds of pictures. </br></br>
+                    I started off by taking pictures of cars. To kinda get familar with the way that cameras work. And
+                    its a lot easier to take a picture of something that doesnt move...
+                </p>
+                <figure>
+                <img src="img/MercMain.JPG">
+                <figcaption>One of the first pictures I've taken, but its still one of the ones I'm most proud of.</figcaption>
+                </figure>
+                <iframe src="https://www.youtube.com/embed/PW8tr4j1ZWE"></iframe>
+            </section>
+            <section class="gridItem" id="weddingPage" style="display: none;">
+                <h2>Weddings and Couples</h2>
+                <p>
+                    This page is all about Love.</br>
+                    Wedding pictures are some of the most fun types of pictures to take. I get to capure amazing moments
+                    for people who are going to cherish those forever.
+                </p>
+                <img src="img/WeddingMain.jpg">
+                <p>
+                    Couples pictures is a great way to get some fun and cute pictures as well! And it's great because
+                    there are many occasions for something like that.
+                </p>
+                <img src="img/WeddingSecondary.jpg">
+            </section>
+            <section class="gridItem" id="groupPage" style="display: none;">
+                <h2>Group Pictures</h2>
+                <p>
+                    Group pictues are a necessity, but they can kinda be boring. I try to add something new with every
+                    group I do.
+                </p>
+                <img src="img/FamilyMain.jpg">
+                <img src="img/GroupSecondary.jpg">
+            </section>
+            <section class="gridItem" id="singlePage" style="display: none;">
+                <h2>Single Subject</h2>
+                <p>
+                    Single subject pictures have so many uses. There's graduation pictures, or mission picures, or if
+                    you just need a proffesional looking headshot.
+                </p>
+                <img src="img/SingleMain.jpg">
+                <img src="img/SingleSecond.jpg">
+            </section>
+
+
+            <section class="gridItem" id="formPage" style="display: none;">
+                <h2 id="visitorTitle">Visitor Form</h2>
+                <div class="successMsg" style="display:none">
+                  Thank you for logging your visit!
+                </div>
+                <form id="myform">
+                  <ul class="flex">
+                    <li class="section-display">
+
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" 
+                              placeholder="Enter your first name here" required>
+                        <div class="errorMsg">First Name is Required</div>
+                      </li>
+                      <li >
+                        <label for="last-name">Last Name</label>
+                        <input type="text"  id="last-name" name="last-name" placeholder="Enter your last name here" required>
+                        <div class="errorMsg">Last Name is Required</div>
+                      </li>
+                      <li >
+                        <label for="address">Address</label>
+                        <input type="text"  id="address" name="address" placeholder="Enter your address here" required>
+                        <div class="errorMsg"></div>
+                      </li>
+                      <li >
+                        <label for="city">City</label>
+                        <input type="text"  id="city" name="city" placeholder="Enter your city here" required>
+                        <div class="errorMsg"></div>
+                      </li>
+                      <li >
+                        <label for="state">State</label>
+                        <input type="text"  id="state"  name="state" placeholder="Enter your state here" required maxlength="2" minlength="2">
+                        <div class="errorMsg">Please enter a two character state code</div>
+                      </li>
+                      <li >
+                        <label for="zip">Zip</label>
+                        <input id="zip" name="zip" type="text" placeholder="Enter a zip code here" required pattern="\d{5}">
+                        <div class="errorMsg">You must enter a valid Zip Code</div>
+                      </li>
+                      <li >
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email here" required>
+                        <div class="errorMsg">You must enter a valid email</div>
+                      </li>
+                      <li>
+                        <label for="phone">Phone</label>
+                        <input type="phone" id="phone" placeholder="Enter your phone here" required pattern="^\(\d{3}\)\s\d{3}-\d{4}">
+                        <div class="errorMsg">You must enter a valid phone number</br>Ex: (000) 000-0000</div>
+                      </li>
+                      <li>
+                        <h2>How did you find my page</h2>
+                      </li>
+                      <li>
+                        <input type="checkbox" id='google' name='find-page' value="google">
+                        <label for="google">Google Search</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id='friend' name='find-page' value="friend">
+                        <label for="friend">Friend</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" id='newspaper' name='find-page' value="newspaper">
+                        <label for="newspaper">News Paper</label>
+                        <div class="errorMsg">You must check at least one</div>
+                      </li>
+                      
+                      <li>
+                        <label for="comment">Comments</label>
+                        <textarea rows="4" id="comment" placeholder="Enter your comments here"></textarea>
+                      </li>
+                      
+                      <li>
+                        <button id="submitBtn" type="submit">Send</button>
+                      </li>
+                  </ul>
+                </form>
+            </section>
+
+            <section class="gridItem" id="visitorPage" style="display: none;">
+              <button onclick="addVisitor()">New Visitor</button>
+              <section id="tableSection">
+
+              </section>
+            </section>
+        </content>
+
+        <footer>
+            <p>If you ever find yourself needing pictures for any reason, email me at 19ierickson@gmail.com! :)</p>
+        </footer>
+    </main>
+</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/controller.js"></script>
+
+</html>
